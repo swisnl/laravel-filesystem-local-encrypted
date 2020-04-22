@@ -18,11 +18,27 @@ Via Composer
 $ composer require swisnl/laravel-filesystem-local-encrypted
 ```
 
-## Usage
+Configure the storage driver in `config/filesystems.php`
 
 ``` php
-$skeleton = new Swis\Filesystem\Encrypted();
-echo $skeleton->echoPhrase('Hello, League!');
+'disks' => [
+    'local' => [
+        'driver' => 'local-encrypted',
+        'root' => storage_path('app'),
+    ],
+],
+```
+
+## Usage
+
+You can simply use the storage methods as usual and everything will be encrypted/decrypted under the hood!
+
+This package also includes a response macro so you can easily start a file download of an encrypted file.
+
+``` php
+Response::downloadEncrypted('/path/to/encrypted-file', 'foo-bar.txt');
+// or
+response()->downloadEncrypted('/path/to/encrypted-file', 'foo-bar.txt');
 ```
 
 ## Change log
