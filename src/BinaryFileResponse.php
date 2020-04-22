@@ -14,8 +14,12 @@ class BinaryFileResponse extends BaseBinaryFileResponse
     /**
      * {@inheritdoc}
      */
-    public function setFile($file, string $contentDisposition = null, bool $autoEtag = false, bool $autoLastModified = true)
-    {
+    public function setFile(
+        $file,
+        string $contentDisposition = null,
+        bool $autoEtag = false,
+        bool $autoLastModified = true
+    ) {
         // Wrap the file in our own \Swis\Filesystem\Encrypted\File class.
         if (!$file instanceof File) {
             if ($file instanceof \SplFileInfo) {
