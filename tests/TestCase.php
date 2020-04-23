@@ -3,13 +3,13 @@
 namespace Swis\Laravel\Encrypted\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Swis\Laravel\Encrypted\LocalEncryptedFilesystemServiceProvider;
+use Swis\Laravel\Encrypted\EncryptedDataServiceProvider;
 
 class TestCase extends BaseTestCase
 {
     protected function getPackageProviders($app)
     {
-        return [LocalEncryptedFilesystemServiceProvider::class];
+        return [EncryptedDataServiceProvider::class];
     }
 
     protected function getEnvironmentSetUp($app)

@@ -50,7 +50,7 @@
         },
         "laravel": {
             "providers": [
-                "Swis\\Laravel\\Encrypted\\LocalEncryptedFilesystemServiceProvider"
+                "Swis\\Laravel\\Encrypted\\EncryptedDataServiceProvider"
             ]
         }
     },

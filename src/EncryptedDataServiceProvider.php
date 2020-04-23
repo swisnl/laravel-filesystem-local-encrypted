@@ -12,7 +12,7 @@ use League\Flysystem\Adapter\Local as LocalAdapter;
 use League\Flysystem\Filesystem;
 use Swis\Flysystem\Encrypted\EncryptedAdapter;
 
-class LocalEncryptedFilesystemServiceProvider extends ServiceProvider
+class EncryptedDataServiceProvider extends ServiceProvider
 {
     /**
      * @throws \LogicException
