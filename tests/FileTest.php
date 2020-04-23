@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Swis\Filesystem\Encrypted\Tests;
+namespace Swis\Laravel\Encrypted\Tests;
 
-use Swis\Filesystem\Encrypted\File;
+use Swis\Laravel\Encrypted\File;
 
 class FileTest extends TestCase
 {

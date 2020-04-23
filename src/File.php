@@ -1,6 +1,6 @@
 <?php
 
-namespace Swis\Filesystem\Encrypted;
+namespace Swis\Laravel\Encrypted;
 
 use League\Flysystem\Util;
 use Symfony\Component\HttpFoundation\File\File as BaseFile;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Swis\Filesystem\Encrypted\Tests;
+namespace Swis\Laravel\Encrypted\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Swis\Filesystem\Encrypted\LocalEncryptedFilesystemServiceProvider;
+use Swis\Laravel\Encrypted\LocalEncryptedFilesystemServiceProvider;
 
 class TestCase extends BaseTestCase
 {

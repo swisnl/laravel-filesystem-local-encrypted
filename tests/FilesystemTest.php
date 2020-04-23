@@ -1,6 +1,6 @@
 <?php
 
-namespace Swis\Filesystem\Encrypted\Tests;
+namespace Swis\Laravel\Encrypted\Tests;
 
 use Illuminate\Support\Facades\Storage;
 

@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/swisnl/laravel-filesystem-local-encrypted).
+We accept contributions via Pull Requests on [Github](https://github.com/swisnl/laravel-encrypted-data).
 
 
 ## Pull Requests

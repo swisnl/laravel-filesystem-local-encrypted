@@ -1,4 +1,4 @@
-# Laravel Local Encrypted Filesystem Driver
+# Laravel Utilities for Encrypted Data
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -8,14 +8,14 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Made by SWIS][ico-swis]][link-swis]
 
-This package is a Laravel wrapper around [swisnl/flysystem-encrypted](https://github.com/swisnl/flysystem-encrypted) configured for local file storage with some added functionality.
+This package contains several Laravel utilities to work with encrypted data.
 
 ## Install
 
 Via Composer
 
 ``` bash
-$ composer require swisnl/laravel-filesystem-local-encrypted
+$ composer require swisnl/laravel-encrypted-data
 ```
 
 Configure the storage driver in `config/filesystems.php`
@@ -72,19 +72,19 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [SWIS][link-swis] is a web agency from Leiden, the Netherlands. We love working with open source software. 
 
-[ico-version]: https://img.shields.io/packagist/v/swisnl/laravel-filesystem-local-encrypted.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/swisnl/laravel-encrypted-data.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/swisnl/laravel-filesystem-local-encrypted/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/swisnl/laravel-filesystem-local-encrypted.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/swisnl/laravel-filesystem-local-encrypted.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/swisnl/laravel-filesystem-local-encrypted.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/swisnl/laravel-encrypted-data/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/swisnl/laravel-encrypted-data.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/swisnl/laravel-encrypted-data.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/swisnl/laravel-encrypted-data.svg?style=flat-square
 [ico-swis]: https://img.shields.io/badge/%F0%9F%9A%80-made%20by%20SWIS-%23D9021B.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/swisnl/laravel-filesystem-local-encrypted
-[link-travis]: https://travis-ci.org/swisnl/laravel-filesystem-local-encrypted
-[link-scrutinizer]: https://scrutinizer-ci.com/g/swisnl/laravel-filesystem-local-encrypted/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/swisnl/laravel-filesystem-local-encrypted
-[link-downloads]: https://packagist.org/packages/swisnl/laravel-filesystem-local-encrypted
+[link-packagist]: https://packagist.org/packages/swisnl/laravel-encrypted-data
+[link-travis]: https://travis-ci.org/swisnl/laravel-encrypted-data
+[link-scrutinizer]: https://scrutinizer-ci.com/g/swisnl/laravel-encrypted-data/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/swisnl/laravel-encrypted-data
+[link-downloads]: https://packagist.org/packages/swisnl/laravel-encrypted-data
 [link-author]: https://github.com/swisnl
 [link-contributors]: ../../contributors
 [link-swis]: https://www.swis.nl

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="laravel-filesystem-local-encrypted">
-    <description>The coding standard of laravel-filesystem-local-encrypted package</description>
+<ruleset name="laravel-encrypted-data">
+    <description>The coding standard of laravel-encrypted-data package</description>
     <arg value="p" />
 
     <config name="ignore_warnings_on_exit" value="1" />

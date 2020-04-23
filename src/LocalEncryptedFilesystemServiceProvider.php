@@ -1,6 +1,6 @@
 <?php
 
-namespace Swis\Filesystem\Encrypted;
+namespace Swis\Laravel\Encrypted;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Arr;
@@ -60,7 +60,7 @@ class LocalEncryptedFilesystemServiceProvider extends ServiceProvider
              * @param array $headers
              * @param string $disposition
              *
-             * @return \Swis\Filesystem\Encrypted\BinaryFileResponse
+             * @return \Swis\Laravel\Encrypted\BinaryFileResponse
              */
             function ($file, $name = null, array $headers = [], $disposition = 'attachment') {
                 $response = new BinaryFileResponse($file, 200, $headers, false, $disposition);

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Swis\Filesystem\Encrypted\Tests;
+namespace Swis\Laravel\Encrypted\Tests;
 
 use SplFileInfo;
-use Swis\Filesystem\Encrypted\BinaryFileResponse;
-use Swis\Filesystem\Encrypted\File;
+use Swis\Laravel\Encrypted\BinaryFileResponse;
+use Swis\Laravel\Encrypted\File;
 
 class BinaryFileResponseTest extends TestCase
 {

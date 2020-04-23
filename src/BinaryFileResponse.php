@@ -1,13 +1,13 @@
 <?php
 
-namespace Swis\Filesystem\Encrypted;
+namespace Swis\Laravel\Encrypted;
 
 use Symfony\Component\HttpFoundation\BinaryFileResponse as BaseBinaryFileResponse;
 
 class BinaryFileResponse extends BaseBinaryFileResponse
 {
     /**
-     * @var \Swis\Filesystem\Encrypted\File
+     * @var \Swis\Laravel\Encrypted\File
      */
     protected $file;
 
@@ -20,7 +20,7 @@ class BinaryFileResponse extends BaseBinaryFileResponse
         bool $autoEtag = false,
         bool $autoLastModified = true
     ) {
-        // Wrap the file in our own \Swis\Filesystem\Encrypted\File class.
+        // Wrap the file in our own \Swis\Laravel\Encrypted\File class.
         if (!$file instanceof File) {
             if ($file instanceof \SplFileInfo) {
                 $file = new File($file->getPathname());

@@ -1,7 +1,7 @@
 {
-    "name": "swisnl/laravel-filesystem-local-encrypted",
+    "name": "swisnl/laravel-encrypted-data",
     "type": "library",
-    "description": "Laravel Local Encrypted Filesystem Driver",
+    "description": "Laravel Utilities for Encrypted Data",
     "keywords": [
         "swisnl",
         "laravel",
@@ -9,7 +9,7 @@
         "local",
         "encrypted"
     ],
-    "homepage": "https://github.com/swisnl/laravel-filesystem-local-encrypted",
+    "homepage": "https://github.com/swisnl/laravel-encrypted-data",
     "license": "MIT",
     "authors": [
         {
@@ -31,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Swis\\Filesystem\\Encrypted\\": "src"
+            "Swis\\Laravel\\Encrypted\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Swis\\Filesystem\\Encrypted\\Tests\\": "tests"
+            "Swis\\Laravel\\Encrypted\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,7 +50,7 @@
         },
         "laravel": {
             "providers": [
-                "Swis\\Filesystem\\Encrypted\\LocalEncryptedFilesystemServiceProvider"
+                "Swis\\Laravel\\Encrypted\\LocalEncryptedFilesystemServiceProvider"
             ]
         }
     },
