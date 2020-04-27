@@ -18,6 +18,10 @@ Via Composer
 $ composer require swisnl/laravel-encrypted-data
 ```
 
+## Usage
+
+### Filesystem
+
 Configure the storage driver in `config/filesystems.php`
 
 ``` php
@@ -29,11 +33,11 @@ Configure the storage driver in `config/filesystems.php`
 ],
 ```
 
-## Usage
+You can now simply use the storage methods as usual and everything will be encrypted/decrypted under the hood!
 
-You can simply use the storage methods as usual and everything will be encrypted/decrypted under the hood!
+#### Download encrypted file
 
-This package also includes a response macro so you can easily start a file download of an encrypted file.
+This package also includes a response macro so you can easily start a file download of an encrypted file as an alternative to `Storage::download('file.jpg')`.
 
 ``` php
 Response::downloadEncrypted('/path/to/encrypted-file', 'foo-bar.txt');
