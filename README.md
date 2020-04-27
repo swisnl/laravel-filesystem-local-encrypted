@@ -45,6 +45,13 @@ Response::downloadEncrypted('/path/to/encrypted-file', 'foo-bar.txt');
 response()->downloadEncrypted('/path/to/encrypted-file', 'foo-bar.txt');
 ```
 
+## Known limitations
+
+Due to the encryption, some limitations apply:
+
+1. You can't use the public disk as that will download the raw encrypted files, so using `Storage::url()` and `Storage::temporaryUrl()` does not make sense;
+2. You can use streams with this disk, but internally we will always convert those to strings because the entire file contents need to be encrypted/decrypted at once.
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
