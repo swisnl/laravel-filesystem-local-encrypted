@@ -20,9 +20,21 @@ $ composer require swisnl/laravel-encrypted-data
 
 ## Usage
 
+### Models
+
+Use `Swis\Laravel\Encrypted\EncryptedCast` as [cast](https://laravel.com/docs/7.x/eloquent-mutators#custom-casts) in your model. Make sure your database columns are long enough, so your data isn't truncated!
+
+``` php
+protected $casts = [
+    'secret' => Swis\Laravel\Encrypted\EncryptedCast::class,
+];
+```
+
+You can now simply use the model properties as usual and everything will be encrypted/decrypted under the hood!
+
 ### Filesystem
 
-Configure the storage driver in `config/filesystems.php`
+Configure the storage driver in `config/filesystems.php`.
 
 ``` php
 'disks' => [
@@ -37,7 +49,7 @@ You can now simply use the storage methods as usual and everything will be encry
 
 #### Download encrypted file
 
-This package also includes a response macro so you can easily start a file download of an encrypted file as an alternative to `Storage::download('file.jpg')`.
+This package also includes a response macro, so you can easily start a file download of an encrypted file as an alternative to `Storage::download('file.jpg')`.
 
 ``` php
 Response::downloadEncrypted('/path/to/encrypted-file', 'foo-bar.txt');
@@ -45,9 +57,18 @@ Response::downloadEncrypted('/path/to/encrypted-file', 'foo-bar.txt');
 response()->downloadEncrypted('/path/to/encrypted-file', 'foo-bar.txt');
 ```
 
-## Known limitations
+## Known issues/limitations
 
-Due to the encryption, some limitations apply:
+Due to the encryption, some issues/limitations apply:
+
+1. Encrypted data is — depending on what you encrypt — roughly 30-40% bigger.
+
+### Models
+
+1. You can't query or order columns that are encrypted in your SQL-statements, but you can query or sort the results using collection methods;
+2. All data is being serialized before it is encrypted — and unserialized after it is decrypted — so everything is stored exactly as how you provide it to the model.
+
+### Filesystem
 
 1. You can't use the public disk as that will download the raw encrypted files, so using `Storage::url()` and `Storage::temporaryUrl()` does not make sense;
 2. You can use streams with this disk, but internally we will always convert those to strings because the entire file contents need to be encrypted/decrypted at once.
