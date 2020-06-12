@@ -22,11 +22,11 @@ $ composer require swisnl/laravel-encrypted-data
 
 ### Models
 
-Use `Swis\Laravel\Encrypted\EncryptedCast` as [cast](https://laravel.com/docs/7.x/eloquent-mutators#custom-casts) in your model. Make sure your database columns are long enough, so your data isn't truncated!
+Extend `\Swis\Laravel\Encrypted\EncryptedModel` in your model and define the encrypted fields. Make sure your database columns are long enough, so your data isn't truncated!
 
 ``` php
-protected $casts = [
-    'secret' => Swis\Laravel\Encrypted\EncryptedCast::class,
+protected $encrypted = [
+    'secret',
 ];
 ```
 
@@ -66,7 +66,7 @@ Due to the encryption, some issues/limitations apply:
 ### Models
 
 1. You can't query or order columns that are encrypted in your SQL-statements, but you can query or sort the results using collection methods;
-2. All data is being serialized before it is encrypted — and unserialized after it is decrypted — so everything is stored exactly as how you provide it to the model.
+2. All data is being serialized before it is encrypted — and unserialized after it is decrypted — so everything is stored exactly as how Laravel would insert it into the database. You can use [Eloquent Mutators](https://laravel.com/docs/7.x/eloquent-mutators) as you normally would.
 
 ### Filesystem
 
