@@ -56,9 +56,9 @@ class EncryptedDataServiceProvider extends ServiceProvider
             'downloadEncrypted',
             /**
              * @param \SplFileInfo|string $file
-             * @param string|null $name
-             * @param array $headers
-             * @param string|null $disposition
+             * @param string|null         $name
+             * @param array               $headers
+             * @param string|null         $disposition
              *
              * @return \Swis\Laravel\Encrypted\BinaryFileResponse
              */

@@ -16,10 +16,10 @@ class EncryptedModel extends Model
     protected $encrypted = [];
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      *
      * @param array $attributes
-     * @param bool $sync
+     * @param bool  $sync
      *
      * @return $this
      */
@@ -29,7 +29,7 @@ class EncryptedModel extends Model
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      *
@@ -82,7 +82,7 @@ class EncryptedModel extends Model
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      *
