@@ -74,6 +74,10 @@ class BinaryFileResponseTest extends TestCase
         $response->sendContent();
 
         // assert
-        $this->assertFileNotExists($file);
+        if (method_exists($this, 'assertFileDoesNotExist')) {
+            $this->assertFileDoesNotExist($file);
+        } else {
+            $this->assertFileNotExists($file);
+        }
     }
 }
