@@ -4,26 +4,20 @@ namespace Swis\Laravel\Encrypted;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
 use League\Flysystem\Adapter\Local as LocalAdapter;
 use League\Flysystem\Filesystem;
 use Swis\Flysystem\Encrypted\EncryptedAdapter;
 
 class EncryptedDataServiceProvider extends ServiceProvider
 {
-    /**
-     * @throws \LogicException
-     */
-    public function boot()
+    public function boot(): void
     {
         $this->registerStorageDriver();
-        $this->registerResponseMacro();
     }
 
-    protected function registerStorageDriver()
+    protected function registerStorageDriver(): void
     {
         Storage::extend(
             'local-encrypted',
@@ -46,34 +40,6 @@ class EncryptedDataServiceProvider extends ServiceProvider
                     ),
                     Arr::only($config, ['visibility', 'disable_asserts', 'url'])
                 );
-            }
-        );
-    }
-
-    protected function registerResponseMacro()
-    {
-        Response::macro(
-            'downloadEncrypted',
-            /**
-             * @param \SplFileInfo|string $file
-             * @param string|null         $name
-             * @param array               $headers
-             * @param string|null         $disposition
-             *
-             * @return \Swis\Laravel\Encrypted\BinaryFileResponse
-             */
-            function ($file, $name = null, array $headers = [], $disposition = 'attachment') {
-                $response = new BinaryFileResponse($file, 200, $headers, false, $disposition);
-
-                if (null !== $name) {
-                    return $response->setContentDisposition(
-                        $disposition,
-                        $name,
-                        str_replace('%', '', Str::ascii($name))
-                    );
-                }
-
-                return $response;
             }
         );
     }

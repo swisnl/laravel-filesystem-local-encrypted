@@ -7,12 +7,12 @@ use Swis\Laravel\Encrypted\EncryptedDataServiceProvider;
 
 class TestCase extends BaseTestCase
 {
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [EncryptedDataServiceProvider::class];
     }
 
-    protected function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('app.key', 'JwedQwbFHOZamnyxwih0Pjc029U2KQpp');
         $app['config']->set('filesystems.default', 'local');

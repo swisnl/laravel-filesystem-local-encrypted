@@ -10,7 +10,7 @@ class EncryptedModelTest extends TestCase
     /**
      * @test
      */
-    public function it_decrypts_raw_attributes()
+    public function it_decrypts_raw_attributes(): void
     {
         // arrange
         $value = 'secret';
@@ -27,7 +27,7 @@ class EncryptedModelTest extends TestCase
     /**
      * @test
      */
-    public function it_does_not_decrypt_raw_attributes_that_are_not_provided()
+    public function it_does_not_decrypt_raw_attributes_that_are_not_configured_as_such(): void
     {
         // arrange
         $value = 'foo-bar';
@@ -43,7 +43,7 @@ class EncryptedModelTest extends TestCase
     /**
      * @test
      */
-    public function it_does_not_decrypt_raw_attributes_that_are_null()
+    public function it_does_not_decrypt_raw_attributes_that_are_null(): void
     {
         // arrange
         $model = $this->getModelInstance();
@@ -58,7 +58,7 @@ class EncryptedModelTest extends TestCase
     /**
      * @test
      */
-    public function it_does_not_decrypt_raw_attributes_that_are_not_encrypted()
+    public function it_does_not_decrypt_raw_attributes_that_are_not_encrypted(): void
     {
         // arrange
         $value = 'foo-bar';
@@ -74,7 +74,7 @@ class EncryptedModelTest extends TestCase
     /**
      * @test
      */
-    public function it_encrypts_data_on_insert()
+    public function it_encrypts_data_on_insert(): void
     {
         // arrange
         $attributes = ['secret' => 'secret'];
@@ -100,7 +100,7 @@ class EncryptedModelTest extends TestCase
     /**
      * @test
      */
-    public function it_encrypts_data_on_update()
+    public function it_encrypts_data_on_update(): void
     {
         // arrange
         $attributes = ['secret' => 'secret'];
