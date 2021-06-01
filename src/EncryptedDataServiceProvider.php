@@ -12,12 +12,22 @@ use Swis\Flysystem\Encrypted\EncryptedAdapter;
 
 class EncryptedDataServiceProvider extends ServiceProvider
 {
-    public function boot(): void
+    public function register(): void
     {
-        $this->registerStorageDriver();
+        $this->registerEncrypter();
     }
 
-    protected function registerStorageDriver(): void
+    protected function registerEncrypter(): void
+    {
+        $this->app->alias('encrypter', 'encrypted-data.encrypter');
+    }
+
+    public function boot(): void
+    {
+        $this->setupStorageDriver();
+    }
+
+    protected function setupStorageDriver(): void
     {
         Storage::extend(
             'local-encrypted',
@@ -36,7 +46,7 @@ class EncryptedDataServiceProvider extends ServiceProvider
                             $links,
                             $permissions
                         ),
-                        $app->make('encrypter')
+                        $app->make('encrypted-data.encrypter')
                     ),
                     Arr::only($config, ['visibility', 'disable_asserts', 'url'])
                 );

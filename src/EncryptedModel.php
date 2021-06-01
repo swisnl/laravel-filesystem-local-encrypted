@@ -133,7 +133,7 @@ class EncryptedModel extends Model
             // because the return value of \Illuminate\Encryption\Encrypter is a
             // Base64-encoded JSON string and this always starts with that.
             if (isset($attributes[$key]) && Str::startsWith($attributes[$key], 'eyJpdiI6')) {
-                $attributes[$key] = decrypt($attributes[$key]);
+                $attributes[$key] = app('encrypted-data.encrypter')->decrypt($attributes[$key]);
             }
         }
 
@@ -149,7 +149,7 @@ class EncryptedModel extends Model
     {
         foreach ($this->encrypted as $key) {
             if (isset($attributes[$key])) {
-                $attributes[$key] = encrypt($attributes[$key]);
+                $attributes[$key] = app('encrypted-data.encrypter')->encrypt($attributes[$key]);
             }
         }
 
