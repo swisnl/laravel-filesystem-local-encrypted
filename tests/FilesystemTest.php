@@ -9,7 +9,7 @@ class FilesystemTest extends TestCase
     /**
      * @test
      */
-    public function it_registers_the_filesystem_driver(): void
+    public function itRegistersTheFilesystemDriver(): void
     {
         $contents = Storage::get('read.txt');
 
