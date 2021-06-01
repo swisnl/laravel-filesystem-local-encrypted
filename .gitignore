@@ -2,7 +2,7 @@
 build
 composer.lock
 vendor
-.php_cs
+.php-cs-fixer.php
 .php_cs.cache
 phpunit.xml
 .phpunit.result.cache
