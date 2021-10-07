@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
+[![Buy us a tree][ico-treeware]][link-treeware]
 [![Build Status][ico-travis]][link-travis]
 [![Coverage Status][ico-scrutinizer]][link-scrutinizer]
 [![Quality Score][ico-code-quality]][link-code-quality]
@@ -90,12 +91,15 @@ If you discover any security related issues, please email security@swis.nl inste
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
+This package is [Treeware](https://treeware.earth). If you use it in production, then we ask that you [**buy the world a tree**][link-treeware] to thank us for our work. By contributing to the Treeware forest you’ll be creating employment for local families and restoring wildlife habitats.
+
 ## SWIS :heart: Open Source
 
 [SWIS][link-swis] is a web agency from Leiden, the Netherlands. We love working with open source software. 
 
 [ico-version]: https://img.shields.io/packagist/v/swisnl/laravel-encrypted-data.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-treeware]: https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/swisnl/laravel-encrypted-data/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/swisnl/laravel-encrypted-data.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/swisnl/laravel-encrypted-data.svg?style=flat-square
@@ -107,6 +111,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-scrutinizer]: https://scrutinizer-ci.com/g/swisnl/laravel-encrypted-data/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/swisnl/laravel-encrypted-data
 [link-downloads]: https://packagist.org/packages/swisnl/laravel-encrypted-data
+[link-treeware]: https://plant.treeware.earth/swisnl/laravel-encrypted-data
 [link-author]: https://github.com/swisnl
 [link-contributors]: ../../contributors
 [link-swis]: https://www.swis.nl
