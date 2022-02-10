@@ -6,5 +6,9 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## [Unreleased]
 
+- Nothing
+
+## [2.0.0] - 2022-02-10
+
 ### Changed
 - Bumped minimum Laravel version to 9.
