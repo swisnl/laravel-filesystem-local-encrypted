@@ -20,14 +20,14 @@
         }
     ],
     "require": {
-        "php": "^7.2|^8.0",
-        "laravel/framework": "^6.0|^7.0|^8.0",
-        "swisnl/flysystem-encrypted": "^1.0"
+        "php": "^8.0",
+        "laravel/framework": "^9.0",
+        "swisnl/flysystem-encrypted": "^2.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
-        "graham-campbell/testbench": "^5.4",
-        "phpunit/phpunit": ">=8.5"
+        "graham-campbell/testbench": "^5.7",
+        "phpunit/phpunit": ">=9.5"
     },
     "autoload": {
         "psr-4": {

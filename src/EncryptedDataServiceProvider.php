@@ -3,12 +3,15 @@
 namespace Swis\Laravel\Encrypted;
 
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
-use League\Flysystem\Adapter\Local as LocalAdapter;
 use League\Flysystem\Filesystem;
-use Swis\Flysystem\Encrypted\EncryptedAdapter;
+use League\Flysystem\Local\LocalFilesystemAdapter;
+use League\Flysystem\UnixVisibility\PortableVisibilityConverter;
+use League\Flysystem\Visibility;
+use Swis\Flysystem\Encrypted\EncryptedFilesystemAdapter;
 
 class EncryptedDataServiceProvider extends ServiceProvider
 {
@@ -32,24 +35,37 @@ class EncryptedDataServiceProvider extends ServiceProvider
         Storage::extend(
             'local-encrypted',
             function (Application $app, array $config) {
-                $permissions = $config['permissions'] ?? [];
+                $visibility = PortableVisibilityConverter::fromArray(
+                    $config['permissions'] ?? [],
+                    $config['directory_visibility'] ?? $config['visibility'] ?? Visibility::PRIVATE
+                );
 
                 $links = ($config['links'] ?? null) === 'skip'
-                    ? LocalAdapter::SKIP_LINKS
-                    : LocalAdapter::DISALLOW_LINKS;
+                    ? LocalFilesystemAdapter::SKIP_LINKS
+                    : LocalFilesystemAdapter::DISALLOW_LINKS;
 
-                return new Filesystem(
-                    new EncryptedAdapter(
-                        new LocalAdapter(
-                            $config['root'],
-                            $config['lock'] ?? LOCK_EX,
-                            $links,
-                            $permissions
-                        ),
-                        $app->make('encrypted-data.encrypter')
+                $adapter = new EncryptedFilesystemAdapter(
+                    new LocalFilesystemAdapter(
+                        $config['root'],
+                        $visibility,
+                        $config['lock'] ?? LOCK_EX,
+                        $links
                     ),
-                    Arr::only($config, ['visibility', 'disable_asserts', 'url'])
+                    $app->make('encrypted-data.encrypter')
                 );
+
+                $driver = new Filesystem(
+                    $adapter,
+                    Arr::only($config, [
+                        'directory_visibility',
+                        'disable_asserts',
+                        'temporary_url',
+                        'url',
+                        'visibility',
+                    ])
+                );
+
+                return new FilesystemAdapter($driver, $adapter, $config);
             }
         );
     }
