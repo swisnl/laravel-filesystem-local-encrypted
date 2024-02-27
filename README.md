@@ -9,6 +9,12 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Made by SWIS][ico-swis]][link-swis]
 
+> [!WARNING]
+> Laravel supports [encrypted casts](https://laravel.com/docs/10.x/eloquent-mutators#encrypted-casting) since version 8.12, so new projects should use that instead of this package. If you want to encrypt files, take a look at [swisnl/flysystem-encrypted](https://packagist.org/packages/swisnl/flysystem-encrypted).
+>
+> We aim to provide a migration path to encrypted casts. See issue [#1](https://github.com/swisnl/laravel-encrypted-data/issues/1) for more information.
+>
+
 This package contains several Laravel utilities to work with encrypted data.
 
 ## Install
