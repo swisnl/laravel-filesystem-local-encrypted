@@ -124,7 +124,7 @@ class EncryptedModelTest extends TestCase
         // expectations
     }
 
-    private function getModelInstance(Builder $query = null, bool $exists = false): EncryptedModel
+    private function getModelInstance(?Builder $query = null, bool $exists = false): EncryptedModel
     {
         return new class($query, $exists) extends EncryptedModel {
             protected $guarded = [];
@@ -135,7 +135,7 @@ class EncryptedModelTest extends TestCase
 
             private $query;
 
-            public function __construct(Builder $query = null, $exists = false)
+            public function __construct(?Builder $query = null, $exists = false)
             {
                 parent::__construct([]);
 
