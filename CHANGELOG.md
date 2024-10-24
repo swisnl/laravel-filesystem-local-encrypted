@@ -8,6 +8,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 - Nothing.
 
+## [2.2.0] - 2024-10-24
+
+### Added
+
+- Added support for Laravel 11.
+
 ## [2.1.0] - 2023-02-16
 
 ### Added
